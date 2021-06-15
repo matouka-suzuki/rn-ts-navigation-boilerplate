@@ -9,20 +9,19 @@
 import React from 'react';
 import {
   SafeAreaView,
-  StatusBar,
   StyleSheet,
-  Text,
-  View,
 } from 'react-native';
+import { NavigationContainerRef } from '@react-navigation/core';
+
+import {Navigation} from './navigation/navigation'
 
 const App = () => {
 
+  const navigationRef = React.useRef<NavigationContainerRef>(null)
+
   return (
     <SafeAreaView style={styles.parent}>
-      <StatusBar barStyle={'light-content'} />
-      <View style={styles.main}>
-        <Text>Working with TypeScript!</Text>
-      </View>
+      <Navigation navigationRef={navigationRef}/>
     </SafeAreaView>
   );
 };
